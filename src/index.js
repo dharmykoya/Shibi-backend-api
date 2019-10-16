@@ -13,9 +13,25 @@ app.get('/', (request, response) => {
   });
 });
 
+app.use((request, response, next) => {
+  const error = new Error('You are trying to access a wrong Route');
+  error.status = 404;
+  next(error);
+});
+
+app.use((error, request, response) => {
+  response.status(error.status || 500);
+  response.json({
+    status: error.status || 500,
+    error: error.name,
+    message: error.message
+  });
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
+  // eslint-disable-next-line no-console
   console.log(12, `Listening on port: ${PORT}`);
 });
 
