@@ -1,5 +1,5 @@
-import express from "express";
-import bodyParser from "body-parser";
+import express from 'express';
+import bodyParser from 'body-parser';
 
 // Create global App project
 const app = express();
@@ -7,9 +7,9 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get("/", (request, response) => {
+app.get('/', (request, response) => {
   return response.status(200).send({
-    message: "Welcome to Shibi app API"
+    message: 'Welcome to Shibi app API'
   });
 });
 
