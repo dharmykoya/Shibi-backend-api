@@ -1,0 +1,36 @@
+{
+  "name": "shibi-backend-api",
+  "version": "1.0.0",
+  "description": "An application that allows food vendor showcase their kitchen online and users ordering from food vendors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dharmykoya/Shibi-backend-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "postgresql",
+    "sequelize"
+  ],
+  "author": "Damilola Adekoya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dharmykoya/Shibi-backend-api/issues"
+  },
+  "homepage": "https://github.com/dharmykoya/Shibi-backend-api#readme",
+  "dependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
