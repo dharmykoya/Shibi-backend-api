@@ -34,4 +34,19 @@ describe('Testing the entry point of the application', () => {
         done();
       });
   });
+
+  it('should return welcome to shibi app', done => {
+    chai
+      .request(app)
+      .get('/api/v1')
+      .end((err, response) => {
+        expect(response.status).to.equal(200);
+        expect(response).to.be.an('Object');
+        expect(response.body).to.have.property('message');
+        expect(response.body.message).to.equal(
+          'Welcome to Shibi api version 1'
+        );
+        done();
+      });
+  });
 });
