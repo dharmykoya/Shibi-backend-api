@@ -1,0 +1,28 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Shibi Api",
+    "version": "1.0"
+  },
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Welcome",
+      "description": "Entry route"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["Welcome"],
+        "summary": "Initial route",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Welcome to Shibi for all your vendor needs"
+          }
+        }
+      }
+    }
+  }
+}
