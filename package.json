@@ -4,7 +4,7 @@
   "description": "An application that allows food vendor showcase their kitchen online and users ordering from food vendors",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test nyc mocha src/**/*.spec.js --require @babel/register --exit --timeout 10000",
+    "test": "NODE_ENV=test nyc _mocha src/**/*.spec.js --require @babel/register --exit --timeout 10000",
     "start": "nodemon --exec babel-node src/index.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
@@ -51,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "codeclimate-test-reporter": "^0.5.1",
     "coveralls": "^3.0.7",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
