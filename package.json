@@ -4,9 +4,12 @@
   "description": "An application that allows food vendor showcase their kitchen online and users ordering from food vendors",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test nyc mocha src/**/*.spec.js --require @babel/register --exit --timeout 10000",
+    "test": "NODE_ENV=test npm run db:drop && npm run migration-rollback && npm run db-migration && nyc mocha src/**/*.spec.js --require @babel/register --exit --timeout 10000",
     "start": "nodemon --exec babel-node src/index.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "db-migration": "sequelize db:migrate",
+    "migration-rollback": "sequelize db:migrate:undo:all",
+    "db:drop": "sequelize db:drop && sequelize db:create"
   },
   "repository": {
     "type": "git",
@@ -42,7 +45,13 @@
     "body-parser": "^1.19.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.2",
+    "sequelize-cli": "^5.5.1",
+    "sinon": "^7.5.0",
     "swagger-ui-express": "^4.1.2"
   },
   "nyc": {
@@ -64,6 +73,7 @@
     "mocha-lcov-reporter": "^1.3.0",
     "nodemon": "^1.19.4",
     "nyc": "^14.1.1",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "sequelize-test-helpers": "^1.1.2"
   }
 }
